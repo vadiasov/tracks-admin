@@ -1,0 +1,26 @@
+{
+    "name": "vadiasov/tracks-admin",
+    "description": "This package creates DB table tracks (music tracks). It uploads tracks. It serves CRUD pages of tracks.",
+    "license": "MIT",
+    "type": "library",
+    "require": {
+        "php": ">=7.0",
+        "illuminate/support": "5.*"
+    },
+    "author": {
+        "name": "Volodymyr Vadiasov ",
+        "email": "vadiasov.volodymyr@gmail.com"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vadiasov\\TracksAdmin\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Vadiasov\\TracksAdmin\\TracksServiceProvider"
+            ]
+        }
+    }
+}
