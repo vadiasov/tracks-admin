@@ -65,7 +65,7 @@
                                 @foreach($tracks as $track)
                                     <tr>
                                         <td>{{ $track->id }}</td>
-                                        <td></td>
+                                        <td>{{ $track->order }}</td>
                                         <td>{{ $track->title }}</td>
                                         <td>{{ $track->file }}</td>
                                         <td>{{ $track->release_date }}</td>
