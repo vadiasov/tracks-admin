@@ -35,6 +35,8 @@
                                         style="color: #3c8dbc">{{ $album->title }}</span></h3>
                             <a href="{{ action('\Vadiasov\Upload\Controllers\UploadController@upload', ['albumsAdmin', $album->id]) }}"
                                class="btn btn-info pull-right">Add Tracks</a>
+                            <a href="{{ action('\Vadiasov\Ordering\Controllers\OrderingController@index', ['tracks', $album->id]) }}"
+                               class="btn btn-success pull-right" style="margin-right: 20px">Order Tracks</a>
                             @if (session('status'))
                                 <h4 class="alert alert-success" style="margin-top: 20px;">
                                     {{ session('status') }}

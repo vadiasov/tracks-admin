@@ -54,7 +54,7 @@ class TracksController extends Controller
         }
         
         if ($track->release_date != '') {
-            $track->release_date = date_inverse('-', $album->release_date);
+            $track->release_date = date_inverse('-', $track->release_date);
         }
         
         return view('tracks-admin::edit', compact(
@@ -93,7 +93,7 @@ class TracksController extends Controller
         
         $track->save();
         
-        return redirect(route('admin/albums'))->with('status', 'The Album has been edited!');
+        return redirect(action('\Vadiasov\TracksAdmin\Controllers\TracksController@index', $albumId))->with('status', 'The Track has been edited!');
     }
     
     public function destroy($albumId, $trackId)
