@@ -51,7 +51,8 @@
                                     <th>ID</th>
                                     <th>Order</th>
                                     <th>Title</th>
-                                    <th>file</th>
+                                    <th>File</th>
+                                    <th>Test</th>
                                     <th>Release</th>
                                     <th>Price</th>
                                     <th>Free</th>
@@ -68,6 +69,11 @@
                                         <td>{{ $track->order }}</td>
                                         <td>{{ $track->title }}</td>
                                         <td>{{ $track->file }}</td>
+                                        <td>
+                                            <audio controls>
+                                                <source src="{{ asset('storage/tracks/' . $track->file) }}">
+                                            </audio>
+                                        </td>
                                         <td>{{ $track->release_date }}</td>
                                         <td>{{ $track->price }}</td>
                                         <td>{{ $track->free }}</td>
@@ -89,6 +95,7 @@
                                     <th>Order</th>
                                     <th>Title</th>
                                     <th>File</th>
+                                    <th>Test</th>
                                     <th>Release</th>
                                     <th>Price</th>
                                     <th>Free</th>
