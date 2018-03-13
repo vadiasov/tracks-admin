@@ -1,7 +1,7 @@
 <?php
 
 // src/Routes/web.php
-Route::group(['middleware' => ['web']], function () {
+Route::group(['middleware' => ['web', 'admin']], function () {
     Route::get('admin/albums/{id}/tracks', 'Vadiasov\TracksAdmin\Controllers\TracksController@index')->name('admin/albums/{id}/tracks');
     Route::get('admin/albums/{id}/tracks/create', 'Vadiasov\TracksAdmin\Controllers\TracksController@create')->name('admin/albums/{id}/tracks/create');
     Route::post('admin/albums/{id}/tracks/create', 'Vadiasov\TracksAdmin\Controllers\TracksController@store');
