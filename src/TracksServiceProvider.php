@@ -14,7 +14,7 @@ class TracksServiceProvider extends ServiceProvider
      */
     public function boot(Router $router)
     {
-        $router->aliasMiddleware('tracks-admin', \Vadiasov\TracksAdmin\Middleware\TracksMiddleware::class);
+//        $router->aliasMiddleware('tracks-admin', \Vadiasov\TracksAdmin\Middleware\TracksMiddleware::class);
     
         $this->publishes([
 //            __DIR__ . '/Config/tracksAdmin.php' => config_path('tracksAdmin.php'),
@@ -28,11 +28,11 @@ class TracksServiceProvider extends ServiceProvider
         $this->loadTranslationsFrom(__DIR__ . '/Translations', 'tracks-admin');
         $this->loadViewsFrom(__DIR__ . '/Views', 'tracks-admin');
     
-        if ($this->app->runningInConsole()) {
-            $this->commands([
-                \Vadiasov\TracksAdmin\Commands\TracksAdminCommand::class,
-            ]);
-        }
+//        if ($this->app->runningInConsole()) {
+//            $this->commands([
+//                \Vadiasov\TracksAdmin\Commands\TracksAdminCommand::class,
+//            ]);
+//        }
     }
 
     /**
