@@ -18,10 +18,8 @@
         <section class="content-header">
             <h1>Tracks</h1>
             <ol class="breadcrumb">
-                <ol class="breadcrumb">
-                    <li><a href="{{ route('admin/albums') }}"><i class="fa fa-dashboard"></i> Albums</a></li>
-                    <li><a href="#">Tracks</a></li>
-                </ol>
+                <li><a href="{{ route('admin/albums') }}"><i class="fa fa-dashboard"></i> Albums</a></li>
+                <li><a href="#">Tracks</a></li>
             </ol>
         </section>
 
@@ -59,6 +57,7 @@
                                     <th>Donate</th>
                                     <th>Created At</th>
                                     <th>Updated At</th>
+                                    <th>Add Arts</th>
                                     <th>Actions</th>
                                 </tr>
                                 </thead>
@@ -81,8 +80,15 @@
                                         <td>{{ $track->created_at }}</td>
                                         <td>{{ $track->updated_at }}</td>
                                         <td>
+                                            <a href="{{action('\Vadiasov\Upload\Controllers\UploadController@upload4', ['artsAdminFromTracks', $album->id, $track->id])}}"
+                                               title="Add Arts">
+                                                <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                                        </td>
+                                        <td>
                                             <a href="{{action('\Vadiasov\TracksAdmin\Controllers\TracksController@edit', [$album->id, $track->id])}}">
                                                 <i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                            <a href="{{action('\Vadiasov\ArtsAdmin\Controllers\ArtsController@indexTrack', [$album->id, $track->id])}}">
+                                                <i class="fa fa-file-image-o" aria-hidden="true"></i></a>
                                             <a href="{{action('\Vadiasov\TracksAdmin\Controllers\TracksController@destroy', [$album->id, $track->id])}}">
                                                 <i class="fa fa-trash" aria-hidden="true"></i></a>
                                         </td>
@@ -102,6 +108,7 @@
                                     <th>Donate</th>
                                     <th>Created At</th>
                                     <th>Updated At</th>
+                                    <th>Add Arts</th>
                                     <th>Actions</th>
                                 </tr>
                                 </tfoot>
